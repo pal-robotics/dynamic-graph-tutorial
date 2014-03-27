@@ -3,7 +3,7 @@
 #  Author: Florent Lamiraux
 #
 
-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8.3)
 
 INCLUDE(cmake/base.cmake)
 INCLUDE(cmake/boost.cmake)
