@@ -5,13 +5,19 @@
 
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8.3)
 
-INCLUDE(cmake/base.cmake)
-INCLUDE(cmake/boost.cmake)
-INCLUDE(cmake/lapack.cmake)
-INCLUDE(cmake/cpack.cmake)
+find_package(catkin REQUIRED COMPONENTS sot_cmake dynamic-graph-python)
+
+INCLUDE(${SOT_CMAKE_DIR}/base.cmake)
+INCLUDE(${SOT_CMAKE_DIR}/boost.cmake)
+INCLUDE(${SOT_CMAKE_DIR}/lapack.cmake)
+INCLUDE(${SOT_CMAKE_DIR}/cpack.cmake)
 
 SET(PROJECT_NAME dynamic-graph-tutorial)
 project(${PROJECT_NAME})
+
+include_directories(${catkin_INCLUDE_DIRS})
+
+catkin_package()
 
 SET(PROJECT_VERSION 1.0)
 SET(PROJECT_DESCRIPTION "Tutorial for dynamic-graph")
@@ -28,17 +34,8 @@ SET(${PROJECT_NAME}_HEADERS
 SETUP_PROJECT()
 
 #
-#  Documentation dependency to package dynamic-graph
-#
-
-ADD_REQUIRED_DEPENDENCY("dynamic-graph")
-
-#
-#  Dependency to package dynamic-graph-python
-#
-ADD_REQUIRED_DEPENDENCY("dynamic-graph-python")
 
 ADD_SUBDIRECTORY(src)
-ADD_SUBDIRECTORY(doc)
+#ADD_SUBDIRECTORY(doc)
 
 SETUP_PROJECT_FINALIZE()

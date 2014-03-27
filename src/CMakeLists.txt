@@ -15,7 +15,7 @@
 
 # Libraries DEFINITIONS and INCLUDES
 
-INCLUDE(../cmake/python.cmake)
+INCLUDE(${SOT_CMAKE_DIR}/python.cmake)
 
 SET(LIBRARY_NAME ${PROJECT_NAME})
 
@@ -35,8 +35,6 @@ SET_TARGET_PROPERTIES(${LIBRARY_NAME}
   SOVERSION ${PROJECT_VERSION}
   INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib)
 
-# Add dynamic-graph-python compilation flags and link to dependency libraries
-PKG_CONFIG_USE_DEPENDENCY(${PROJECT_NAME} dynamic-graph-python)
 
 INSTALL(TARGETS ${LIBRARY_NAME}
   DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
