@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package>
+  <name>dynamic-graph-tutorial</name>
+  <version>0.1.0</version>
+  <description>The dynamic-graph-tutorial package</description>
+
+  <maintainer email="hilario@todo.todo">hilario</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>dynamic-graph-python</build_depend>
+
+</package>
