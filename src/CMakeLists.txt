@@ -29,6 +29,7 @@ ADD_LIBRARY(${LIBRARY_NAME}
   inverted-pendulum.cc
   feedback-controller.cc
   )
+target_link_libraries(${LIBRARY_NAME} ${catkin_LIBRARIES})
 
 SET_TARGET_PROPERTIES(${LIBRARY_NAME}
   PROPERTIES
